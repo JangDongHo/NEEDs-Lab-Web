@@ -1,0 +1,57 @@
+@import "../variables/fonts.scss";
+
+nav.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+
+  div.navbar__logo-container {
+    display: flex;
+    align-items: center;
+
+    .navbar__logo {
+      width: 95px;
+      height: 46px;
+      flex-shrink: 0;
+      margin-right: 27px;
+    }
+    div.navbar__logo-text {
+      font-family: $font-family-bold;
+      div.navbar__logo-text--main {
+        font-size: 22px;
+      }
+      div.navbar__logo-text--sub {
+        color: #464646;
+        font-size: 12px;
+      }
+    }
+  }
+
+  ul.navbar__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li.navbar__item {
+      margin-right: 10px;
+
+      a.navbar__link {
+        color: #333;
+        text-decoration: none;
+        padding: 8px 12px;
+        border-radius: 4px;
+
+        &:hover {
+          background-color: #ddd;
+        }
+
+        &.active {
+          background-color: #888;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
