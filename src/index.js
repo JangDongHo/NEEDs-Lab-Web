@@ -2,7 +2,7 @@
 import "./assets/styles/styles.scss";
 
 // Javascripts
-import "./assets/scripts/main.js";
+import "./assets/scripts/browseSize";
 
 // Images
 import "./assets/images/logo.png";

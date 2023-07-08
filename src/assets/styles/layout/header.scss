@@ -4,7 +4,12 @@ nav.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  left: 0;
+  padding: 25px;
+  z-index: 3;
+  position: fixed;
+  width: 100%;
+  color: white;
 
   div.navbar__logo-container {
     display: flex;
@@ -13,16 +18,15 @@ nav.navbar {
     .navbar__logo {
       width: 95px;
       height: 46px;
-      flex-shrink: 0;
       margin-right: 27px;
     }
     div.navbar__logo-text {
       font-family: $font-family-bold;
       div.navbar__logo-text--main {
-        font-size: 22px;
+        font-size: 20px;
       }
       div.navbar__logo-text--sub {
-        color: #464646;
+        color: #c1c1c1;
         font-size: 12px;
       }
     }
@@ -38,20 +42,26 @@ nav.navbar {
       margin-right: 10px;
 
       a.navbar__link {
-        color: #333;
+        color: white;
         text-decoration: none;
         padding: 8px 12px;
         border-radius: 4px;
-
-        &:hover {
-          background-color: #ddd;
-        }
-
-        &.active {
-          background-color: #888;
-          color: #fff;
-        }
       }
+    }
+  }
+  .navbar__menu-icon {
+    display: none;
+    font-size: 30px;
+  }
+
+  // 모바일 미디어쿼리
+  @media screen and (max-width: 1280px) {
+    ul.navbar__list {
+      display: none; // 기본적으로 숨김
+    }
+
+    .navbar__menu-icon {
+      display: block; // 보임
     }
   }
 }
