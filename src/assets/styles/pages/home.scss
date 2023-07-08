@@ -1,7 +1,7 @@
 @import "../variables/fonts.scss";
 
-div.hero-container {
-  position: absolute;
+section.hero-container {
+  position: relative;
   width: 100%;
   left: 0;
   top: 0;
@@ -19,7 +19,7 @@ div.hero-container {
     color: white;
     text-align: center;
     .hero-text__main {
-      font-size: 2.5em;
+      font-size: 2.3em;
       margin-bottom: 0.5em;
       font-weight: 700;
     }
@@ -28,13 +28,8 @@ div.hero-container {
       font-size: 1.5em;
       font-weight: 300;
     }
-  }
-}
-
-// 모바일 미디어쿼리
-@media screen and (max-width: 1280px) {
-  div.hero-container {
-    .hero-text {
+    // 모바일 미디어쿼리
+    @media screen and (max-width: 1280px) {
       bottom: 0;
       left: 0;
       transform: translate(0, 0);
@@ -44,5 +39,14 @@ div.hero-container {
         font-size: 2em;
       }
     }
+  }
+}
+
+.hero-container__content {
+  font-size: 1.2em;
+  line-height: 1.5;
+
+  p {
+    margin-bottom: 1em;
   }
 }

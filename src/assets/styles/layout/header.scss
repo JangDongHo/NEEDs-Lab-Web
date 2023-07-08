@@ -19,15 +19,34 @@ nav.navbar {
       width: 95px;
       height: 46px;
       margin-right: 27px;
+
+      @media screen and (max-width: 1280px) {
+        width: 60px;
+        height: 30px;
+        margin-right: 13px;
+      }
     }
     div.navbar__logo-text {
       font-family: $font-family-bold;
       div.navbar__logo-text--main {
         font-size: 20px;
+        @media screen and (max-width: 1280px) {
+          display: none;
+        }
       }
       div.navbar__logo-text--sub {
         color: #c1c1c1;
         font-size: 12px;
+        @media screen and (max-width: 1280px) {
+          display: none;
+        }
+      }
+      div.navbar__logo-text--mobile {
+        display: none;
+        font-size: 2em;
+        @media screen and (max-width: 1280px) {
+          display: block;
+        }
       }
     }
   }
