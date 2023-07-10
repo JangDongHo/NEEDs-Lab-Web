@@ -1,19 +1,21 @@
 @font-face {
   font-family: "Pretendard-Bold";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff")
-    format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Pretendard-Light";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff")
-    format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
 }
 
-// Font Styles
-$font-family-bold: "Pretendard-Bold", sans-serif;
-$font-family-light: "Pretendard-Light", sans-serif;
+.font-bold {
+  font-family: "Pretendard-Bold", sans-serif;
+}
+
+.font-light {
+  font-family: "Pretendard-Light", sans-serif;
+}
