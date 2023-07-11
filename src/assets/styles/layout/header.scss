@@ -10,6 +10,14 @@ nav.navbar {
   position: fixed;
   width: 100%;
   color: white;
+  &.scrolled {
+    /* Styles for scrolled header */
+    /* Update styles as per your requirements */
+    background-color: white;
+    color: $grey-color;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 1em 2em;
+  }
 
   div.navbar__logo-container {
     display: flex;
@@ -57,11 +65,14 @@ nav.navbar {
     margin: 0;
     padding: 0;
 
+    &.scorlled {
+      color: $grey-color;
+    }
+
     li.navbar__item {
       margin-right: 10px;
 
       a.navbar__link {
-        color: white;
         text-decoration: none;
         padding: 8px 12px;
         border-radius: 4px;
