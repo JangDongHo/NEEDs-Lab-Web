@@ -48,6 +48,9 @@ nav.navbar {
         @media screen and (max-width: 1280px) {
           display: none;
         }
+        &.scrolled {
+          color: #464646;
+        }
       }
       div.navbar__logo-text--mobile {
         display: none;
