@@ -1,3 +1,26 @@
 extends ../layouts/default.pug
 
 block content
+  //- 상단 이미지
+  include ../mixin/sub_hero.pug
+  +sub_hero('People')
+
+  //- 서브 메뉴
+  include ../mixin/sub_menu.pug
+  +sub_menu([
+    {name: 'Professor', isSelected: true}, 
+    {name: 'Members'}, 
+    {name: 'Alumni'}])
+  
+  //- 본문
+  main
+    section.professor-container
+      h1.title Professor
+      .professor-profile
+        .professor__text
+          .professor__text__rank.font-bold Associate Professor
+          .professor__text__name.font-bold Duckjong Kim
+          .professor__text__department
+            p 
+            | School of Mechanical Engineering Gyeongsang National University
+        img.professor__image(src="./images/professor.png", alt="교수 이미지")

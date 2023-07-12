@@ -7,3 +7,4 @@ import "./assets/scripts/main";
 // Images
 import "./assets/images/logo.png";
 import "./assets/images/representative_image.png";
+import "./assets/images/professor.png";

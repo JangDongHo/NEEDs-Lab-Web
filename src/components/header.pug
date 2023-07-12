@@ -1,24 +1,25 @@
 nav.navbar
-  .navbar__logo-container
-    img.navbar__logo(src="./images/logo.png" alt="경상국립대학교 로고")
-    .navbar__logo-text.font-bold
-      .navbar__logo-text--main 차세대 에너지 환경 기계 연구실
-      .navbar__logo-text--mobile NEEDs Lab.
-      .navbar__logo-text--sub.font-light Next-generation Energy and Environmental Devices Lab.
+  a(herf="/")
+    .navbar__logo-container
+      img.navbar__logo(src="./images/logo.png" alt="경상국립대학교 로고")
+      .navbar__logo-text.font-bold
+        .navbar__logo-text--main 차세대 에너지 환경 기계 연구실
+        .navbar__logo-text--mobile NEEDs Lab.
+        .navbar__logo-text--sub.font-light Next-generation Energy and Environmental Devices Lab.
   ul.navbar__list
     li.navbar__item
-      a.navbar__link(href="#") Home
+      a.navbar__link(href="/") Home
     li.navbar__item
-      a.navbar__link(href="#people") People
+      a.navbar__link(href="./people") People
     li.navbar__item
-      a.navbar__link(href="#") Research
+      a.navbar__link(href="./research") Research
     li.navbar__item
-      a.navbar__link(href="#") Publication
+      a.navbar__link(href="./publication") Publication
     li.navbar__item
-      a.navbar__link(href="#") Lab Facilities
+      a.navbar__link(href="./lab-facilities") Lab Facilities
     li.navbar__item
-      a.navbar__link(href="#") Gallery
+      a.navbar__link(href="./gallery") Gallery
     li.navbar__item
-      a.navbar__link(href="#") Contact
+      a.navbar__link(href="./contact") Contact
   .navbar__menu-icon
     i.fa-solid.fa-bars
