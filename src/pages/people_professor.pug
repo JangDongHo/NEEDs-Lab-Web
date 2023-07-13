@@ -8,9 +8,9 @@ block content
   //- 서브 메뉴
   include ../mixin/sub_menu.pug
   +sub_menu([
-    {name: 'Professor', isSelected: true}, 
-    {name: 'Members'}, 
-    {name: 'Alumni'}])
+    {name: 'Professor', href: './people_professor', isSelected: true}, 
+    {name: 'Members', href: './people_members'}, 
+    {name: 'Alumni', href: './people_alumni'}])
   
   //- 본문
   main
@@ -70,3 +70,4 @@ block content
               span.professor-description-content-item__year.font-bold 2018. 8
               p.professor-description-content-item__content
                 | Korea Institute of Machinery and Materials 
+                

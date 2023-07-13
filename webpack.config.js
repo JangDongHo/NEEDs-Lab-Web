@@ -2,6 +2,7 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ImageminPlugin = require("imagemin-webpack-plugin").default;
+const LiveReloadPlugin = require("webpack-livereload-plugin");
 
 module.exports = {
   entry: "./src/index.js",
@@ -39,8 +40,12 @@ module.exports = {
     }),
     // 다른 페이지들의 템플릿을 기반으로 생성된 HTML 파일들
     new HtmlWebpackPlugin({
-      template: "./src/pages/people.pug",
-      filename: "people.html",
+      template: "./src/pages/people_professor.pug",
+      filename: "people_professor.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/pages/people_members.pug",
+      filename: "people_members.html",
     }),
     // CSS 파일
     new MiniCssExtractPlugin({
@@ -53,6 +58,9 @@ module.exports = {
       pngquant: {
         quality: [0.65, 0.9],
       },
+    }),
+    new LiveReloadPlugin({
+      appendScriptTag: true,
     }),
   ],
   devServer: {
@@ -67,7 +75,10 @@ module.exports = {
     페이지 추가 시, 해당 페이지에 대한 설정을 추가해야 함
     */
     historyApiFallback: {
-      rewrites: [{ from: /^\/people/, to: "./people.html" }],
+      rewrites: [
+        { from: /^\/people_professor/, to: "./people_professor.html" },
+        { from: /^\/people_members/, to: "./people_members.html" },
+      ],
     },
   },
 };

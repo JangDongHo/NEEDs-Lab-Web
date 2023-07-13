@@ -9,7 +9,6 @@ window.addEventListener("scroll", function () {
     navbar.classList.add("scrolled");
     navbarList.classList.add("scrolled");
     navbarLogoSubText.classList.add("scrolled");
-    console.log(navbarList);
   } else {
     navbar.classList.remove("scrolled");
     navbarList.classList.remove("scrolled");
