@@ -67,7 +67,9 @@ main {
       text-align: center;
     }
     .news-container {
+      border-bottom: 1px solid #bababa;
       .news-item {
+        position: relative;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
@@ -77,6 +79,10 @@ main {
         max-width: 1156px; /* Set your desired max-width value */
         margin-left: auto;
         margin-right: auto;
+        @media screen and (max-width: 1280px) {
+          flex-direction: column-reverse;
+          padding: 2em 0;
+        }
         .news-item__date-container {
           display: flex;
           flex-direction: column;
@@ -85,13 +91,21 @@ main {
           .news-item__date-d {
             font-size: 3em;
             color: $blue-color;
+            @media screen and (max-width: 1280px) {
+              display: none;
+            }
           }
           .news-item__date-ym {
             margin-top: -0.8em;
+            @media screen and (max-width: 1280px) {
+              position: absolute;
+              right: 0;
+              bottom: 0;
+              color: $blue-color;
+            }
           }
         }
         .news-item__content {
-          margin-right: 2em;
           p.news-item__title {
             font-size: 1.4em;
             margin-bottom: 0.3em;
@@ -103,6 +117,10 @@ main {
         .news-item__icon {
           color: #3cd08a;
           font-size: 2.5em;
+          // 모바일 미디어쿼리
+          @media screen and (max-width: 1280px) {
+            display: none;
+          }
         }
       }
     }
