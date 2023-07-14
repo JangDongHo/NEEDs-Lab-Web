@@ -5,10 +5,13 @@ const ImageminPlugin = require("imagemin-webpack-plugin").default;
 const LiveReloadPlugin = require("webpack-livereload-plugin");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: {
+    index: "./src/index.js",
+    people_members: "./src/people_members.js",
+  },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
+    filename: "[name].js",
   },
   module: {
     rules: [
@@ -37,15 +40,18 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/pages/index.pug",
       filename: "index.html",
+      chunks: ["index"],
     }),
     // 다른 페이지들의 템플릿을 기반으로 생성된 HTML 파일들
     new HtmlWebpackPlugin({
       template: "./src/pages/people_professor.pug",
       filename: "people_professor.html",
+      chunks: ["index"],
     }),
     new HtmlWebpackPlugin({
       template: "./src/pages/people_members.pug",
       filename: "people_members.html",
+      chunks: ["index", "people_members"],
     }),
     // CSS 파일
     new MiniCssExtractPlugin({
