@@ -8,6 +8,38 @@ block content
   //- 서브 메뉴
   include ../mixin/sub_menu.pug
   +sub_menu([
-    {name: 'Professor', href: './people_professor', isSelected: true}, 
-    {name: 'Members', href: './people_members'}, 
+    {name: 'Professor', href: './people_professor'}, 
+    {name: 'Members', href: './people_members', isSelected: true}, 
     {name: 'Alumni', href: './people_alumni'}])
+  
+  //- 본문
+  main
+    section.members-container
+      h1.title Members
+      .members-tag-container
+        .members-tag
+          .members-tag__item.selected All
+          .members-tag__item Post Docs
+          .members-tag__item Graduate Students
+          .members-tag__item Undergraduate Students
+      .members__list-container
+        .members__list
+          .members__list__content
+            .members__list__content__image-container
+              img.members__list__content__image(src="./images/jangdongho.jpg", alt="장동호")
+            .members__list__content__text-container
+              .members__list__content__text-container__rank.font-bold P.D Candidate
+              .members__list__content__text-container__name.font-bold Dongho Jang
+              .members__list__content__text-container__topic-container
+                p
+                  | Research Subject
+                span
+                  | 연구 주제입니다.
+              .members__list__content__text-container__contact-container
+                .members__list__content__text-container__phone
+                    i.fa-solid.fa-phone
+                    span +82-55-772-1637
+                .members__list__content__text-container__email
+                    i.fa-solid.fa-envelope
+                    span dongho18@gnu.ac.kr
+        

@@ -70,6 +70,9 @@ module.exports = {
     compress: true, // gzip 압축 사용 여부
     port: 3000, // 개발 서버 포트
     hot: true, // 변경된 내용이 있을 경우, 자동으로 새로고침
+    devMiddleware: {
+      writeToDisk: true,
+    },
     /*
     SPA의 경우, 브라우저에서 직접 주소를 입력했을 때 404 에러가 발생하므로 이를 방지하기 위한 설정
     페이지 추가 시, 해당 페이지에 대한 설정을 추가해야 함
