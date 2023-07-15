@@ -10,7 +10,7 @@ block content
     section.research-container
       include ../mixin/tag.pug
       +tag(['Research 1', 'Research 2', 'Research 3'])
-      .research__list-container
+      .research__list-container(research-tag='Research 1')
         h2.title
           | High-performance adsorption structures
           br 
@@ -25,4 +25,45 @@ block content
           li.research__list-objective
             | Application to CCUS(Carbon Capture, Utilization and Storage)
         .research__list-image-container
-          img.research__list-image(src="../images/research_1.png", alt="research_1")
+          img.research__list-image(src="./images/research_1.png", alt="research_1")
+        .research__list-description-container
+          p.research__list-description
+            | "전기화학적 압축기를 이용한 화학흡착식 히트펌프 시스템 개발", 알키미스트 프로젝트 (한국에너지기술평가원), 2019-09-01 ~ 2025-12-31, 연구책임자
+          p.research__list-description
+            | "인공 광합성 기반 건물 통합형 저농도 CO2 포집 및 활용 시스템", 알키미스트 프로젝트 (한국산업기술평가관리원), 2023-04-01 ~ 2023-12-31, 연구책임자
+      .research__list-container(research-tag='Research 2')
+        h2.title
+          | Control of material properties based on microstructure adjustment
+        ul.research__list-objectives
+          li.research__list-objective
+            | Understanding the relationship between microstructure and properties 
+          li.research__list-objective
+            | Adjusting microstructure for thermal property control
+          li.research__list-objective
+            | Adjusting microstructure for mechanical property control
+          li.research__list-objective
+            | Adjusting microstructure for ion transport property control
+        .research__list-image-container
+          img.research__list-image(src="./images/research_2.png", alt="research_2")
+        .research__list-description-container
+          p.research__list-description
+            | "고열전도성/고강도 테셀레이션 (Tessellation) 소재 연구", 중견연구자지원사업 (한국연구재단), 2021-03-01 ~ 2025-02-28, 연구책임자
+      .research__list-container(research-tag='Research 3')
+        h2.title
+          | Total solution for efficient management of thermal energy
+        ul.research__list-objectives
+          li.research__list-objective
+            | Thermal design of energy conversion devices
+          li.research__list-objective
+            | Thermal design of the core driving system of eco-friendly mobility
+          li.research__list-objective
+            | Thermal design for electronics cooling
+          li.research__list-objective
+            | Developing high-performance thermal interface materials
+        .research__list-image-container
+          img.research__list-image(src="./images/research_3.png", alt="research_3")
+        .research__list-description-container
+          p.research__list-description
+            | "회전익기 테일로터용 최대추력 6,000 N 이상급 비선형 동적모델 역변환 제어기를 적용한 다중 전기식 통합추력시스템 기술 개발"
+            br
+            | 헬리콥터전기식다중테일로터기술개발 (한국산업기술평가관리원), 2022-04-01 ~ 2025-12-31, 공동연구원

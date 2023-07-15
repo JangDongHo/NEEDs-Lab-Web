@@ -20,9 +20,14 @@ section.research-container {
       }
     }
     .research__list-image-container {
-      margin-bottom: 1.5em;
+      margin-bottom: 1em;
       img {
         width: 100%;
+      }
+    }
+    .research__list-description-container {
+      p.research__list-description {
+        text-align: right;
       }
     }
   }
