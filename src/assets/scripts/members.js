@@ -6,6 +6,7 @@ const drawMembers = (members) => {
   members.forEach((member) => {
     const listItem = document.createElement("div");
     listItem.classList.add("members__list");
+    listItem.setAttribute("rank-tag", member.Tag);
 
     const content = document.createElement("div");
     content.classList.add("members__list__content");
@@ -27,7 +28,7 @@ const drawMembers = (members) => {
     const rank = document.createElement("div");
     rank.classList.add("members__list__content__text-container__rank");
     rank.classList.add("font-bold");
-    rank.textContent = member.Tag;
+    rank.textContent = member.Rank;
 
     const name = document.createElement("div");
     name.classList.add("members__list__content__text-container__name");
@@ -92,9 +93,33 @@ const drawMembers = (members) => {
   });
 };
 
+const changeShowTag = (event) => {
+  const rankTag = event.target.textContent;
+
+  const members = document.querySelectorAll(".members__list");
+  members.forEach((member) => {
+    const memberRankTag = member.getAttribute("rank-tag");
+
+    if (memberRankTag === rankTag || rankTag === "All") {
+      member.style.display = "block";
+    } else {
+      member.style.display = "none";
+    }
+  });
+
+  const tags = document.querySelectorAll(".members-tag__item");
+  tags.forEach((tag) => {
+    tag.classList.toggle("selected", tag.textContent === rankTag);
+  });
+};
+
 const sheetName = "Members";
 getExcelData(sheetName, function (data) {
-  // 데이터 활용
-  console.log(data);
   drawMembers(data);
+});
+
+const tags = document.querySelectorAll(".members-tag__item");
+
+tags.forEach((tag) => {
+  tag.addEventListener("click", changeShowTag);
 });
