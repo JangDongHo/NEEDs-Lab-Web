@@ -15,7 +15,8 @@ const drawMembers = (members) => {
 
     const image = document.createElement("img");
     image.classList.add("members__list__content__image");
-    image.src = member.Image;
+    const imageUrl = `https://drive.google.com/uc?export=view&id=${member.ImageID}`;
+    image.src = imageUrl;
     image.alt = member.Name;
 
     imageContainer.appendChild(image);
