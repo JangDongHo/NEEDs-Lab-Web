@@ -1,0 +1,38 @@
+extends ../layouts/default.pug
+
+block content
+  //- 상단 이미지
+  include ../mixin/sub_hero.pug
+  +sub_hero('Publication')
+
+  //- 서브 메뉴
+  include ../mixin/sub_menu.pug
+  +sub_menu([
+    {name: 'Journal', href: './publication_international_journal', isSelected: true}, 
+    {name: 'Patent', href: './publication_patent'}, 
+    {name: 'Book', href: './publication_book'}])
+  
+  //- 본문
+  main
+    section.publication-container
+      h1.title International Journal
+      include ../mixin/tag.pug
+      +tag(['All', '2020~', '2004~2019', '1999~2003'])
+
+      .publication__year-container
+        .publication__year-title
+          h3.title 2020~
+        .publication__list-container
+          .publication__list
+            .publication__list-index 1
+            .publication__list-content
+              h4.title
+                | “Thermal design of solar thermoelectric generator with phase change material for timely and efficient power generation”
+              p.description H.M Jo, Y.H Joo, D.J Kim (2023), Energy, 263, 125604
+        .publication__list-container
+          .publication__list
+            .publication__list-index 1
+            .publication__list-content
+              h4.title
+                | “Thermal design of solar thermoelectric generator with phase change material for timely and efficient power generation”
+              p.description H.M Jo, Y.H Joo, D.J Kim (2023), Energy, 263, 125604

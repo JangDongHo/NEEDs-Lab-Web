@@ -9,6 +9,7 @@ module.exports = {
     index: "./src/index.js",
     people_members: "./src/people_members.js",
     research: "./src/research.js",
+    publication: "./src/publication.js",
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -59,6 +60,11 @@ module.exports = {
       filename: "research.html",
       chunks: ["index", "research"],
     }),
+    new HtmlWebpackPlugin({
+      template: "./src/pages/publication_international_journal.pug",
+      filename: "publication_international_journal.html",
+      chunks: ["index", "publication"],
+    }),
     // CSS 파일
     new MiniCssExtractPlugin({
       filename: "css/styles.css",
@@ -94,6 +100,7 @@ module.exports = {
         { from: /^\/people_professor/, to: "./people_professor.html" },
         { from: /^\/people_members/, to: "./people_members.html" },
         { from: /^\/research/, to: "./research.html" },
+        { from: /^\/publication_international_journal/, to: "./publication_international_journal.html" },
       ],
     },
   },

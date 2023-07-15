@@ -1,4 +1,4 @@
-import { getExcelData } from "./getData";
+import { getExcelData } from "../getData";
 
 const drawMembers = (members) => {
   const listContainer = document.querySelector(".members__list-container");

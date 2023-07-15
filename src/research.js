@@ -1,5 +1,5 @@
 // Javascripts
-import "./assets/scripts/research";
+import "./assets/scripts/pages/research";
 
 // Images
 import "./assets/images/research_1.png";
