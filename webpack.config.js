@@ -8,6 +8,7 @@ module.exports = {
   entry: {
     index: "./src/index.js",
     people_members: "./src/people_members.js",
+    research: "./src/research.js",
   },
   output: {
     path: path.resolve(__dirname, "dist"),

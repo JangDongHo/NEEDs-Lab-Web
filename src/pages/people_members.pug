@@ -16,10 +16,6 @@ block content
   main
     section.members-container
       h1.title Members
-      .tag-container
-        .tags
-          .tag__item.selected All
-          .tag__item Post Docs
-          .tag__item Graduate Students
-          .tag__item Undergraduate Students
+      include ../mixin/tag.pug
+      +tag(['All', 'Post Docs', 'Graduate Students', 'Undergraduate Students'])
       .members__list-container

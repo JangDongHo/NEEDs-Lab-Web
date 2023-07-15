@@ -8,9 +8,21 @@ block content
   //- 본문
   main
     section.research-container
-      .tag-container
-        .tags
-          .tag__item.selected Research 1
-          .tag__item Research 2
-          .tag__item Research 3
+      include ../mixin/tag.pug
+      +tag(['Research 1', 'Research 2', 'Research 3'])
       .research__list-container
+        h2.title
+          | High-performance adsorption structures
+          br 
+          | for high-efficiency heat pumps and carbon capture
+        ul.research__list-objectives
+          li.research__list-objective
+            | Developing high-performance adsorption materials
+          li.research__list-objective
+            | Optimizing the adsorption structure for effective heat and mass transfer
+          li.research__list-objective
+            | Application to adsorption heat pumps and thermal energy storage
+          li.research__list-objective
+            | Application to CCUS(Carbon Capture, Utilization and Storage)
+        .research__list-image-container
+          img.research__list-image(src="../images/research_1.png", alt="research_1")
