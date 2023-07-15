@@ -107,7 +107,7 @@ const changeShowTag = (event) => {
     }
   });
 
-  const tags = document.querySelectorAll(".members-tag__item");
+  const tags = document.querySelectorAll(".tag__item");
   tags.forEach((tag) => {
     tag.classList.toggle("selected", tag.textContent === rankTag);
   });
@@ -118,7 +118,7 @@ getExcelData(sheetName, function (data) {
   drawMembers(data);
 });
 
-const tags = document.querySelectorAll(".members-tag__item");
+const tags = document.querySelectorAll(".tag__item");
 
 tags.forEach((tag) => {
   tag.addEventListener("click", changeShowTag);

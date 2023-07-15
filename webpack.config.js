@@ -53,6 +53,11 @@ module.exports = {
       filename: "people_members.html",
       chunks: ["index", "people_members"],
     }),
+    new HtmlWebpackPlugin({
+      template: "./src/pages/research.pug",
+      filename: "research.html",
+      chunks: ["index", "research"],
+    }),
     // CSS 파일
     new MiniCssExtractPlugin({
       filename: "css/styles.css",
@@ -87,7 +92,11 @@ module.exports = {
       rewrites: [
         { from: /^\/people_professor/, to: "./people_professor.html" },
         { from: /^\/people_members/, to: "./people_members.html" },
+        { from: /^\/research/, to: "./research.html" },
       ],
     },
+  },
+  watchOptions: {
+    ignored: "./node_modules/",
   },
 };

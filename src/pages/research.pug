@@ -1,0 +1,16 @@
+extends ../layouts/default.pug
+
+block content
+  //- 상단 이미지
+  include ../mixin/sub_hero.pug
+  +sub_hero('Research')
+
+  //- 본문
+  main
+    section.research-container
+      .tag-container
+        .tags
+          .tag__item.selected Research 1
+          .tag__item Research 2
+          .tag__item Research 3
+      .research__list-container
