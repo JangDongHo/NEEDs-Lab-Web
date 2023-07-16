@@ -11,11 +11,11 @@ section.publication-container {
       }
     }
     .publication__list-container {
-      padding: 1em 2em;
-      border-bottom: 1px solid #bababa;
       .publication__list {
         display: flex;
         align-items: center;
+        padding: 1em 2em;
+        border-bottom: 1px solid #bababa;
         .publication__list-index {
           margin-right: 3em;
         }
