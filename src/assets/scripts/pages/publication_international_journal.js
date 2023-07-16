@@ -44,7 +44,6 @@ const drawPublications = (data) => {
     }
   });
 
-  // 각 년도 범위에 대한 컨테이너 생성
   Object.entries(yearRanges).forEach(([yearRange, items]) => {
     const yearContainer = createPublicationContainer(yearRange);
     publicationContainer.appendChild(yearContainer);
@@ -54,7 +53,7 @@ const drawPublications = (data) => {
     // 아이템별로 리스트 생성
     const length = items.length;
     items.forEach((item, index) => {
-      const { Authors, Title, Publication, Volume, Pages } = item;
+      const { Authors, Title, Publication, Volume, Pages, Year } = item;
 
       const listItem = document.createElement("div");
       listItem.classList.add("publication__list");
@@ -68,11 +67,11 @@ const drawPublications = (data) => {
 
       const titleElement = document.createElement("h4");
       titleElement.classList.add("title");
-      titleElement.textContent = Title;
+      titleElement.innerHTML = `${Title}`;
 
       const descriptionElement = document.createElement("p");
       descriptionElement.classList.add("description");
-      descriptionElement.textContent = `${Authors} (${Publication}, ${Volume}, ${Pages})`;
+      descriptionElement.innerHTML = `${Authors} (${Year})<br>${Publication}, ${Volume}, ${Pages}`;
 
       content.appendChild(titleElement);
       content.appendChild(descriptionElement);
