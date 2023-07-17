@@ -9,7 +9,9 @@ module.exports = {
     index: "./src/index.js",
     people_members: "./src/people_members.js",
     research: "./src/research.js",
-    publication: "./src/publication.js",
+    publication_international_journal:
+      "./src/publication_international_journal.js",
+    publication_patent: "./src/publication_patent.js",
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -63,7 +65,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/pages/publication_international_journal.pug",
       filename: "publication_international_journal.html",
-      chunks: ["index", "publication"],
+      chunks: ["index", "publication_international_journal"],
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/pages/publication_patent.pug",
+      filename: "publication_patent.html",
+      chunks: ["index", "publication_patent"],
     }),
     // CSS 파일
     new MiniCssExtractPlugin({
@@ -100,7 +107,14 @@ module.exports = {
         { from: /^\/people_professor/, to: "./people_professor.html" },
         { from: /^\/people_members/, to: "./people_members.html" },
         { from: /^\/research/, to: "./research.html" },
-        { from: /^\/publication_international_journal/, to: "./publication_international_journal.html" },
+        {
+          from: /^\/publication_international_journal/,
+          to: "./publication_international_journal.html",
+        },
+        {
+          from: /^\/publication_patent/,
+          to: "./publication_patent.html",
+        },
       ],
     },
   },
