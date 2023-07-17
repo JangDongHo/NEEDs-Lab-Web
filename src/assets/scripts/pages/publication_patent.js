@@ -67,7 +67,6 @@ const drawPublications = (data) => {
 
       const imageElement = document.createElement("img");
       imageElement.classList.add("publication__list-image");
-      ImageID = "1JUEuwkCX-T9B_wNjtSK0O3z48YA13GKu";
       imageElement.src = `https://drive.google.com/uc?export=view&id=${ImageID}`;
 
       const content = document.createElement("div");
