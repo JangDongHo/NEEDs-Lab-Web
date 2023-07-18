@@ -9,7 +9,8 @@ module.exports = {
     index: "./src/index.js",
     people_members: "./src/people_members.js",
     research: "./src/research.js",
-    publication_international_journal: "./src/publication_international_journal.js",
+    publication_international_journal:
+      "./src/publication_international_journal.js",
     publication_patent: "./src/publication_patent.js",
     publication_book: "./src/publication_book.js",
   },
@@ -77,6 +78,11 @@ module.exports = {
       filename: "publication_book.html",
       chunks: ["index", "publication_book"],
     }),
+    new HtmlWebpackPlugin({
+      template: "./src/pages/contact.pug",
+      filename: "contact.html",
+      chunks: ["index"],
+    }),
     // CSS 파일
     new MiniCssExtractPlugin({
       filename: "css/styles.css",
@@ -123,6 +129,10 @@ module.exports = {
         {
           from: /^\/publication_book/,
           to: "./publication_book.html",
+        },
+        {
+          from: /^\/contact/,
+          to: "./contact.html",
         },
       ],
     },
