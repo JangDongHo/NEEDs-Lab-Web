@@ -1,5 +1,19 @@
 import { getExcelData } from "../getData";
 
+const abbreviateNames = (names) => {
+  const namesArr = names.split(", ");
+
+  const result = namesArr.map((name) => {
+    const parts = name.split(" ");
+    const lastName = parts.pop();
+    const firstName = parts.map((part) => part[0]).join(". ");
+
+    return `${firstName}. ${lastName}`;
+  });
+
+  return result.join(", ");
+};
+
 const createPublicationContainer = (yearRange) => {
   const yearContainer = document.createElement("div");
   yearContainer.classList.add("publication__year-container");
@@ -49,14 +63,12 @@ const drawPublications = (data) => {
     const yearContainer = createPublicationContainer(yearRange);
     publicationContainer.appendChild(yearContainer);
 
-    const listContainer = yearContainer.querySelector(
-      ".publication__list-container"
-    );
+    const listContainer = yearContainer.querySelector(".publication__list-container");
 
     // 아이템별로 리스트 생성
     const length = items.length;
     items.forEach((item, index) => {
-      let { ImageID, Title, Inventor, Number, Date, Country } = item;
+      let { ImageID, Title, Inventors, Number, Date, Country } = item;
 
       const listItem = document.createElement("div");
       listItem.classList.add("publication__list");
@@ -78,13 +90,15 @@ const drawPublications = (data) => {
 
       const descriptionElement = document.createElement("p");
       descriptionElement.classList.add("description");
-      Inventor = Inventor.split("|").join(", ");
+      Inventors = Inventors.split("|").join(", ");
       Number = String(Number).replace(/0+$/, "");
       if (!Country) {
         Country = "대한민국";
         Number = Number.slice(0, 2) + "-" + Number.slice(2);
+      } else {
+        Inventors = abbreviateNames(Inventors);
       }
-      descriptionElement.innerHTML = `${Inventor}<br>${Country} 특허 ${Number} (${Date})`;
+      descriptionElement.innerHTML = `${Inventors}<br>${Country} 특허 ${Number} (${Date})`;
 
       content.appendChild(titleElement);
       content.appendChild(descriptionElement);

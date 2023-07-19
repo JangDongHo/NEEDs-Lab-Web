@@ -1,5 +1,19 @@
 import { getExcelData } from "../getData";
 
+const abbreviateNames = (names) => {
+  const namesArr = names.split("; ").map((name) => name.trim());
+
+  const result = namesArr.map((name) => {
+    const parts = name.split(", ");
+    const firstName = parts[1].match(/[A-Z]/g);
+    const lastName = parts[0];
+
+    return `${firstName.join(". ")}. ${lastName}`;
+  });
+
+  return result.join(", ");
+};
+
 const createPublicationContainer = (yearRange) => {
   const yearContainer = document.createElement("div");
   yearContainer.classList.add("publication__year-container");
@@ -48,14 +62,13 @@ const drawPublications = (data) => {
     const yearContainer = createPublicationContainer(yearRange);
     publicationContainer.appendChild(yearContainer);
 
-    const listContainer = yearContainer.querySelector(
-      ".publication__list-container"
-    );
+    const listContainer = yearContainer.querySelector(".publication__list-container");
 
     // 아이템별로 리스트 생성
     const length = items.length;
     items.forEach((item, index) => {
-      const { Authors, Title, Publication, Volume, Pages, Year } = item;
+      let { Authors, Title, Publication, Volume, Pages, Year } = item;
+      Authors = abbreviateNames(Authors);
 
       const listItem = document.createElement("div");
       listItem.classList.add("publication__list");

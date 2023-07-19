@@ -9,6 +9,7 @@ section.hero-container {
     width: 100%;
     height: 30em;
     object-fit: cover;
+    filter: brightness(0.6);
   }
   .hero-text {
     position: absolute;
@@ -154,6 +155,7 @@ section.contact-container {
       margin-bottom: 1em;
     }
     .contact-content__description {
+      font-size: 1.2em;
       margin-bottom: 2.5em;
     }
   }
