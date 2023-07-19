@@ -13,6 +13,7 @@ module.exports = {
       "./src/publication_international_journal.js",
     publication_patent: "./src/publication_patent.js",
     publication_book: "./src/publication_book.js",
+    lab_facilities: "./src/lab_facilities.js",
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -83,6 +84,11 @@ module.exports = {
       filename: "contact.html",
       chunks: ["index"],
     }),
+    new HtmlWebpackPlugin({
+      template: "./src/pages/lab_facilities.pug",
+      filename: "lab_facilities.html",
+      chunks: ["index", "lab_facilities"],
+    }),
     // CSS 파일
     new MiniCssExtractPlugin({
       filename: "css/styles.css",
@@ -133,6 +139,10 @@ module.exports = {
         {
           from: /^\/contact/,
           to: "./contact.html",
+        },
+        {
+          from: /^\/lab_facilities/,
+          to: "./lab_facilities.html",
         },
       ],
     },
