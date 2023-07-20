@@ -16,7 +16,7 @@ const drawMembers = (members) => {
 
     const image = document.createElement("img");
     image.classList.add("members__list__content__image");
-    const imageUrl = `https://drive.google.com/uc?export=view&id=${member.ImageID}`;
+    const imageUrl = member.ImageID ? `https://drive.google.com/uc?export=view&id=${member.ImageID}` : "./images/empty.png";
     image.src = imageUrl;
     image.alt = member.Name;
 
@@ -50,19 +50,6 @@ const drawMembers = (members) => {
     const contactContainer = document.createElement("div");
     contactContainer.classList.add("members__list__content__text-container__contact-container");
 
-    const phone = document.createElement("div");
-    phone.classList.add("members__list__content__text-container__phone");
-
-    const phoneIcon = document.createElement("i");
-    phoneIcon.classList.add("fa-solid");
-    phoneIcon.classList.add("fa-phone");
-
-    const phoneNum = document.createElement("span");
-    phoneNum.textContent = member.Phone;
-
-    phone.appendChild(phoneIcon);
-    phone.appendChild(phoneNum);
-
     const email = document.createElement("div");
     email.classList.add("members__list__content__text-container__email");
 
@@ -76,7 +63,6 @@ const drawMembers = (members) => {
     email.appendChild(emailIcon);
     email.appendChild(emailAddr);
 
-    contactContainer.appendChild(phone);
     contactContainer.appendChild(email);
 
     textContainer.appendChild(rank);
