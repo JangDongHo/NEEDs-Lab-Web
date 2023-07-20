@@ -1,5 +1,27 @@
 // Description: Main javascript file for the project
 
+// Scroll Events: 헤더바 hover 이벤트
+let activeSubMenu = null;
+
+const navbarListItems = document.querySelectorAll(".navbar__item");
+
+navbarListItems.forEach((item) => {
+  const subMenuContainer = item.querySelector(".navbar__sub-menu-container");
+  if (!subMenuContainer) return;
+  item.addEventListener("mouseenter", () => {
+    if (activeSubMenu) {
+      activeSubMenu.classList.remove("active");
+      activeSubMenu = null;
+    }
+    subMenuContainer.classList.add("active");
+    activeSubMenu = subMenuContainer;
+  });
+  item.addEventListener("mouseleave", () => {
+    subMenuContainer.classList.remove("active");
+    activeSubMenu = null;
+  });
+});
+
 // Scroll Events: 상단 메뉴바 스크롤 이벤트
 window.addEventListener("scroll", function () {
   const navbar = document.querySelector(".navbar");
