@@ -1,6 +1,6 @@
 // Description: Main javascript file for the project
 
-// Scroll Events: 헤더바 hover 이벤트
+// Hover Events: 헤더바 서브 메뉴 표시 이벤트
 let activeSubMenu = null;
 
 const navbarListItems = document.querySelectorAll(".navbar__item");
@@ -19,6 +19,25 @@ navbarListItems.forEach((item) => {
   item.addEventListener("mouseleave", () => {
     subMenuContainer.classList.remove("active");
     activeSubMenu = null;
+  });
+});
+
+// Mobile Events: 모바일 메뉴 표시 이벤트
+const navbarOpenMenuBtn = document.querySelector(".navbar__menu-icon--bars");
+const navbarMenu = document.querySelector(".navbar__mobile-menu");
+const blackBg = document.querySelector(".black-bg");
+
+navbarOpenMenuBtn.addEventListener("click", () => {
+  const navbarCloseMenuBtn = document.querySelector(
+    ".navbar__mobile-menu-close-icon"
+  );
+  navbarMenu.classList.add("active");
+  blackBg.classList.add("active");
+  document.body.style.overflow = "hidden";
+  navbarCloseMenuBtn.addEventListener("click", () => {
+    navbarMenu.classList.remove("active");
+    blackBg.classList.remove("active");
+    document.body.style.overflow = "auto";
   });
 });
 
