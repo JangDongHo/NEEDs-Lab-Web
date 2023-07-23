@@ -71,8 +71,7 @@ const drawPublications = (data) => {
     const listContainer = yearContainer.querySelector(".publication__list-container");
 
     // 아이템별로 리스트 생성
-    const length = items.length;
-    items.forEach((item, index) => {
+    items.forEach((item) => {
       let { Authors, Title, Publication, Volume, Pages, Year, Highlight } = item;
       Authors = abbreviateNames(Authors, Highlight);
 

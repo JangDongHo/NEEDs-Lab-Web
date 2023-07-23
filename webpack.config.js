@@ -8,6 +8,7 @@ module.exports = {
   entry: {
     index: "./src/index.js",
     people_members: "./src/people_members.js",
+    people_alumni: "./src/people_alumni.js",
     research: "./src/research.js",
     publication_international_journal: "./src/publication_international_journal.js",
     publication_patent: "./src/publication_patent.js",
@@ -58,6 +59,11 @@ module.exports = {
       template: "./src/pages/people_members.pug",
       filename: "people_members.html",
       chunks: ["index", "people_members"],
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/pages/people_alumni.pug",
+      filename: "people_alumni.html",
+      chunks: ["index", "people_alumni"],
     }),
     new HtmlWebpackPlugin({
       template: "./src/pages/research.pug",
@@ -128,6 +134,10 @@ module.exports = {
       rewrites: [
         { from: /^\/people_professor/, to: "./people_professor.html" },
         { from: /^\/people_members/, to: "./people_members.html" },
+        {
+          from: /^\/people_alumni/,
+          to: "./people_alumni.html",
+        },
         { from: /^\/research/, to: "./research.html" },
         {
           from: /^\/publication_international_journal/,
@@ -142,16 +152,16 @@ module.exports = {
           to: "./publication_book.html",
         },
         {
-          from: /^\/contact/,
-          to: "./contact.html",
-        },
-        {
           from: /^\/lab_facilities/,
           to: "./lab_facilities.html",
         },
         {
           from: /^\/gallery/,
           to: "./gallery.html",
+        },
+        {
+          from: /^\/contact/,
+          to: "./contact.html",
         },
       ],
     },

@@ -41,8 +41,7 @@ const drawPublications = (data) => {
 
   const yearRanges = {
     "2020~": [],
-    "2015~2019": [],
-    "2006~2014": [],
+    "~2019": [],
   };
 
   // 데이터를 년도 범위에 따라 분류
@@ -52,10 +51,8 @@ const drawPublications = (data) => {
 
     if (Date >= 2020) {
       yearRanges["2020~"].push(item);
-    } else if (Date >= 2015) {
-      yearRanges["2015~2019"].push(item);
     } else {
-      yearRanges["2006~2014"].push(item);
+      yearRanges["~2019"].push(item);
     }
   });
 
@@ -66,8 +63,7 @@ const drawPublications = (data) => {
     const listContainer = yearContainer.querySelector(".publication__list-container");
 
     // 아이템별로 리스트 생성
-    const length = items.length;
-    items.forEach((item, index) => {
+    items.forEach((item) => {
       let { ImageID, Title, Inventors, Number, Date, Country } = item;
 
       const listItem = document.createElement("div");
