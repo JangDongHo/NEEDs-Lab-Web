@@ -9,11 +9,11 @@ module.exports = {
     index: "./src/index.js",
     people_members: "./src/people_members.js",
     research: "./src/research.js",
-    publication_international_journal:
-      "./src/publication_international_journal.js",
+    publication_international_journal: "./src/publication_international_journal.js",
     publication_patent: "./src/publication_patent.js",
     publication_book: "./src/publication_book.js",
     lab_facilities: "./src/lab_facilities.js",
+    gallery: "./src/gallery.js",
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -89,6 +89,11 @@ module.exports = {
       filename: "lab_facilities.html",
       chunks: ["index", "lab_facilities"],
     }),
+    new HtmlWebpackPlugin({
+      template: "./src/pages/gallery.pug",
+      filename: "gallery.html",
+      chunks: ["index", "gallery"],
+    }),
     // CSS 파일
     new MiniCssExtractPlugin({
       filename: "css/styles.css",
@@ -143,6 +148,10 @@ module.exports = {
         {
           from: /^\/lab_facilities/,
           to: "./lab_facilities.html",
+        },
+        {
+          from: /^\/gallery/,
+          to: "./gallery.html",
         },
       ],
     },
