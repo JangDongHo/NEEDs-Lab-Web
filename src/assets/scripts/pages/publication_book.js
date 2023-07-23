@@ -52,10 +52,6 @@ const drawPublications = (data) => {
       const listItem = document.createElement("div");
       listItem.classList.add("publication__list");
 
-      const indexElement = document.createElement("div");
-      indexElement.classList.add("publication__list-index");
-      indexElement.textContent = (length - index).toString();
-
       const content = document.createElement("div");
       content.classList.add("publication__list-content");
 
@@ -70,7 +66,6 @@ const drawPublications = (data) => {
       content.appendChild(titleElement);
       content.appendChild(descriptionElement);
 
-      listItem.appendChild(indexElement);
       listItem.appendChild(content);
 
       listContainer.appendChild(listItem);

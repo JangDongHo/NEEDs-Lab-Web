@@ -1,14 +1,20 @@
 import { getExcelData } from "../getData";
 
-const abbreviateNames = (names) => {
+const abbreviateNames = (names, highlight) => {
   const namesArr = names.split("; ").map((name) => name.trim());
 
   const result = namesArr.map((name) => {
     const parts = name.split(", ");
     const firstName = parts[1].match(/[A-Z]/g);
     const lastName = parts[0];
+    const abbreviatedName = `${firstName.join(". ")}. ${lastName}`;
 
-    return `${firstName.join(". ")}. ${lastName}`;
+    if (highlight === "y" && abbreviatedName === "D. Kim") {
+      const highlightedName = `<u>${abbreviatedName}</u><sup>*</sup>`;
+      return highlightedName;
+    } else {
+      return abbreviatedName;
+    }
   });
 
   return result.join(", ");
@@ -67,15 +73,11 @@ const drawPublications = (data) => {
     // 아이템별로 리스트 생성
     const length = items.length;
     items.forEach((item, index) => {
-      let { Authors, Title, Publication, Volume, Pages, Year } = item;
-      Authors = abbreviateNames(Authors);
+      let { Authors, Title, Publication, Volume, Pages, Year, Highlight } = item;
+      Authors = abbreviateNames(Authors, Highlight);
 
       const listItem = document.createElement("div");
       listItem.classList.add("publication__list");
-
-      const indexElement = document.createElement("div");
-      indexElement.classList.add("publication__list-index");
-      indexElement.textContent = (length - index).toString();
 
       const content = document.createElement("div");
       content.classList.add("publication__list-content");
@@ -91,7 +93,6 @@ const drawPublications = (data) => {
       content.appendChild(titleElement);
       content.appendChild(descriptionElement);
 
-      listItem.appendChild(indexElement);
       listItem.appendChild(content);
 
       listContainer.appendChild(listItem);

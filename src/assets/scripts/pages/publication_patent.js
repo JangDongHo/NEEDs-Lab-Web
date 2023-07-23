@@ -73,10 +73,6 @@ const drawPublications = (data) => {
       const listItem = document.createElement("div");
       listItem.classList.add("publication__list");
 
-      const indexElement = document.createElement("div");
-      indexElement.classList.add("publication__list-index");
-      indexElement.textContent = (length - index).toString();
-
       const imageElement = document.createElement("img");
       imageElement.classList.add("publication__list-image");
       const imageUrl = ImageID ? `https://drive.google.com/uc?export=view&id=${ImageID}` : "./images/empty.png";
@@ -104,7 +100,6 @@ const drawPublications = (data) => {
       content.appendChild(titleElement);
       content.appendChild(descriptionElement);
 
-      listItem.appendChild(indexElement);
       listItem.appendChild(imageElement);
       listItem.appendChild(content);
 
