@@ -48,41 +48,29 @@ section.professor-container {
   }
   .professor-description-container {
     display: flex;
-    justify-content: space-around;
-    margin-bottom: 7em;
+    flex-direction: column;
+    padding: 2em 0;
     @media screen and (max-width: 1280px) {
-      flex-direction: column;
       margin-bottom: 3em;
     }
     .professor-description-title {
-      flex-basis: 200px;
-      margin-right: 3em;
-      border-top: 5px solid #2d2a56;
-      padding-top: 1.5em;
-      @media screen and (max-width: 1280px) {
-        border-top: none;
-        flex-basis: 0;
-        padding-top: 0;
-      }
+      border-top: 1px solid #bababa;
+      width: 100%;
+      text-align: center;
+      padding: 1em 0;
     }
     .professor-description-content {
-      border-top: 1px solid #bababa;
-      width: 43em;
-      padding-top: 1.5em;
-      @media screen and (max-width: 1280px) {
-        border-top: none;
-        padding-top: 0;
-      }
       ul.professor-description-content-list {
+        margin: 0 auto;
         li.professor-description-content-item {
           display: flex;
+          padding: 0.3em 0;
           @media screen and (max-width: 1280px) {
             flex-direction: column;
           }
-          padding: 0.3em 0;
           .professor-description-content-item__year {
             display: inline-block;
-            width: 230px;
+            width: 15em;
           }
           .professor-description-content-item__content {
             color: #676479;
