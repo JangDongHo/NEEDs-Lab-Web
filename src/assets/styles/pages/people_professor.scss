@@ -50,18 +50,25 @@ section.professor-container {
     display: flex;
     flex-direction: column;
     padding: 2em 0;
+    margin-bottom: 2em;
     @media screen and (max-width: 1280px) {
-      margin-bottom: 3em;
+      padding: 0;
     }
     .professor-description-title {
       border-top: 1px solid #bababa;
       width: 100%;
       text-align: center;
-      padding: 1em 0;
+      padding-top: 1em;
+      @media screen and (max-width: 1280px) {
+        text-align: left;
+      }
     }
     .professor-description-content {
       ul.professor-description-content-list {
-        margin: 0 auto;
+        padding-left: 5em;
+        @media screen and (max-width: 1280px) {
+          padding: 0;
+        }
         li.professor-description-content-item {
           display: flex;
           padding: 0.3em 0;
