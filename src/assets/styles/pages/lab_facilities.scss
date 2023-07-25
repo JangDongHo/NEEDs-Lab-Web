@@ -4,66 +4,67 @@
     margin-bottom: 1em;
   }
   .lab_facilities__list-container {
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    gap: 2em;
-    max-width: 1200px;
+    flex-wrap: wrap;
     margin-bottom: 5em;
-  }
-
-  @media screen and (min-width: 1280px) {
-    .lab_facilities__list-container {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
+    max-width: 1200px;
+    @media screen and (max-width: 1280px) {
+      flex-direction: column;
     }
-  }
-
-  .lab_facilities__list {
-    border: 1px solid $lightgrey-color;
-    padding: 2em;
-    flex: 1 1 48%; /* Adjust the width as needed */
-    .lab_facilities__list__content {
-      display: flex;
-      gap: 2em;
-      @media screen and (max-width: 1280px) {
-        flex-direction: column;
+    .lab_facilities__list {
+      border: 1px solid $lightgrey-color;
+      padding: 2em;
+      width: 48%;
+      margin-right: 2%;
+      margin-bottom: 2%;
+      transition: all 0.3s;
+      &:hover {
+        border-color: $blue-color; /* Change the border color on hover */
+        transform: translateY(-5px); /* Move the list item upward by 5px on hover */
+      }
+      .lab_facilities__list__content {
+        display: flex;
+        gap: 2em;
+        @media screen and (max-width: 1280px) {
+          flex-direction: column;
+        }
       }
     }
-  }
 
-  .lab_facilities__list__content__image-container {
-    width: 134px;
-    height: 188px;
-    flex-shrink: 0;
+    .lab_facilities__list__content__image-container {
+      width: 134px;
+      height: 188px;
+      flex-shrink: 0;
 
-    @media screen and (max-width: 1280px) {
-      margin: 0 auto;
+      @media screen and (max-width: 1280px) {
+        margin: 0 auto;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-
-  .lab_facilities__list__content__text-container {
-    @media screen and (max-width: 1280px) {
-      text-align: center;
-    }
-    .lab_facilities__list__content__text-container__name {
-      font-size: 1.7em;
-      margin-bottom: 0.5em;
-    }
-    .lab_facilities__list__content__text-container__info-container {
-      display: flex;
-      flex-direction: column;
-      gap: 0.3em;
-    }
-    .lab_facilities__list__content__text-container__task {
-      font-size: 1.2em;
-      margin-top: 1em;
+    .lab_facilities__list__content__text-container {
+      @media screen and (max-width: 1280px) {
+        text-align: center;
+      }
+      .lab_facilities__list__content__text-container__name {
+        font-size: 1.7em;
+        margin-bottom: 0.5em;
+      }
+      .lab_facilities__list__content__text-container__info-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3em;
+      }
+      .lab_facilities__list__content__text-container__task {
+        font-size: 1.1em;
+        margin-top: 1em;
+      }
     }
   }
 }
