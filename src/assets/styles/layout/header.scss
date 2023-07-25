@@ -37,13 +37,13 @@ nav.navbar {
 
     div.navbar__logo-text {
       div.navbar__logo-text--main {
-        font-size: 20px;
+        font-size: 1.4em;
         @media screen and (max-width: 1280px) {
           display: none;
         }
       }
       div.navbar__logo-text--sub {
-        color: #c1c1c1;
+        color: #d9d9d9;
         font-size: 12px;
         @media screen and (max-width: 1280px) {
           display: none;
@@ -74,7 +74,7 @@ nav.navbar {
     }
 
     li.navbar__item {
-      margin-right: 10px;
+      margin-right: 0.7em;
       padding: 2em 0;
       position: relative;
 

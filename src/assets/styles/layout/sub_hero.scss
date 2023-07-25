@@ -8,7 +8,7 @@ section.sub-hero-container {
     width: 100%;
     height: 20em;
     object-fit: cover;
-    filter: brightness(0.6);
+    filter: brightness(0.4);
   }
   .sub-hero-text {
     position: absolute;
@@ -18,14 +18,13 @@ section.sub-hero-container {
     color: white;
     text-align: center;
     .sub-hero-text__main {
-      font-size: 2.3em;
+      font-size: 2.5em;
       margin-bottom: 0.2em;
       font-weight: 700;
     }
     .sub-hero-text__sub {
-      color: #ccc;
-      font-size: 1.2em;
-      font-weight: 300;
+      color: #e2e2e2;
+      font-size: 1.3em;
     }
     // 모바일 미디어쿼리
     @media screen and (max-width: 1280px) {

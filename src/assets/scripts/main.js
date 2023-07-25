@@ -28,9 +28,7 @@ const navbarMenu = document.querySelector(".navbar__mobile-menu");
 const blackBg = document.querySelector(".black-bg");
 
 navbarOpenMenuBtn.addEventListener("click", () => {
-  const navbarCloseMenuBtn = document.querySelector(
-    ".navbar__mobile-menu-close-icon"
-  );
+  const navbarCloseMenuBtn = document.querySelector(".navbar__mobile-menu-close-icon");
   navbarMenu.classList.add("active");
   blackBg.classList.add("active");
   document.body.style.overflow = "hidden";
@@ -61,8 +59,9 @@ window.addEventListener("scroll", function () {
 window.addEventListener("resize", function () {
   // 가로 크기에 따라 font-size 조절
   var windowWidth = window.innerWidth;
-
-  if (windowWidth >= 1024) {
+  if (windowWidth >= 1440) {
+    document.body.style.fontSize = "18px"; // 가로 크기가 1440px 이상일 때
+  } else if (windowWidth >= 1024) {
     document.body.style.fontSize = "16px"; // 가로 크기가 1024px 이상일 때
   } else if (windowWidth >= 768) {
     document.body.style.fontSize = "14px"; // 가로 크기가 768px 이상일 때

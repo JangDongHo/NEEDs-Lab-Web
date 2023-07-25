@@ -48,7 +48,7 @@ section.professor-container {
   }
   .professor-description-container {
     display: flex;
-    width: 100%;
+    justify-content: space-around;
     margin-bottom: 7em;
     @media screen and (max-width: 1280px) {
       flex-direction: column;
@@ -56,7 +56,7 @@ section.professor-container {
     }
     .professor-description-title {
       flex-basis: 200px;
-      margin-right: 7em;
+      margin-right: 3em;
       border-top: 5px solid #2d2a56;
       padding-top: 1.5em;
       @media screen and (max-width: 1280px) {
@@ -66,8 +66,8 @@ section.professor-container {
       }
     }
     .professor-description-content {
-      flex: 1;
       border-top: 1px solid #bababa;
+      width: 43em;
       padding-top: 1.5em;
       @media screen and (max-width: 1280px) {
         border-top: none;
@@ -82,8 +82,7 @@ section.professor-container {
           padding: 0.3em 0;
           .professor-description-content-item__year {
             display: inline-block;
-            width: 150px;
-            margin-right: 2em;
+            width: 230px;
           }
           .professor-description-content-item__content {
             color: #676479;
