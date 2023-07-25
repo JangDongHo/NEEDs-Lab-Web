@@ -37,15 +37,27 @@ const drawMembers = (members) => {
 
     const topicContainer = document.createElement("div");
     topicContainer.classList.add("members__list__content__text-container__topic-container");
+    if (member["Research Subject"] !== "") {
+      const researchSubject = document.createElement("p");
+      researchSubject.textContent = "Research Subject";
 
-    const researchSubject = document.createElement("p");
-    researchSubject.textContent = "Department";
+      const researchSubjectDetail = document.createElement("span");
+      researchSubjectDetail.textContent = member["Research Subject"];
 
-    const researchSubjectDetail = document.createElement("span");
-    researchSubjectDetail.textContent = member["Research Subject"];
+      topicContainer.appendChild(researchSubject);
+      topicContainer.appendChild(researchSubjectDetail);
+    }
 
-    topicContainer.appendChild(researchSubject);
-    topicContainer.appendChild(researchSubjectDetail);
+    if (member["Department"] !== "") {
+      const department = document.createElement("p");
+      department.textContent = "Department";
+
+      const departmentDetail = document.createElement("span");
+      departmentDetail.textContent = member["Department"];
+
+      topicContainer.appendChild(department);
+      topicContainer.appendChild(departmentDetail);
+    }
 
     const contactContainer = document.createElement("div");
     contactContainer.classList.add("members__list__content__text-container__contact-container");
