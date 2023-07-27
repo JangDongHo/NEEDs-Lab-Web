@@ -44,14 +44,17 @@ window.addEventListener("scroll", function () {
   const navbar = document.querySelector(".navbar");
   const navbarList = navbar.querySelector(".navbar__list");
   const navbarLogoSubText = navbar.querySelector(".navbar__logo-text--sub");
+  const navbarLogo = navbar.querySelector(".navbar__logo");
   if (window.scrollY > 0) {
     navbar.classList.add("scrolled");
     navbarList.classList.add("scrolled");
     navbarLogoSubText.classList.add("scrolled");
+    navbarLogo.src = "./images/logo(black).png";
   } else {
     navbar.classList.remove("scrolled");
     navbarList.classList.remove("scrolled");
     navbarLogoSubText.classList.remove("scrolled");
+    navbarLogo.src = "./images/logo(white).png";
   }
 });
 
