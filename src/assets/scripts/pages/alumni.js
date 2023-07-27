@@ -48,15 +48,15 @@ const drawMembers = (members) => {
       topicContainer.appendChild(researchSubjectDetail);
     }
 
-    if (member["Department"] !== "") {
-      const department = document.createElement("p");
-      department.textContent = "Department";
+    if (member["Current Affiliation"] !== "") {
+      const affiliation = document.createElement("p");
+      affiliation.textContent = "Current Affiliation";
 
-      const departmentDetail = document.createElement("span");
-      departmentDetail.textContent = member["Department"];
+      const affiliationDetail = document.createElement("span");
+      affiliationDetail.textContent = member["Current Affiliation"];
 
-      topicContainer.appendChild(department);
-      topicContainer.appendChild(departmentDetail);
+      topicContainer.appendChild(affiliation);
+      topicContainer.appendChild(affiliationDetail);
     }
 
     const contactContainer = document.createElement("div");
