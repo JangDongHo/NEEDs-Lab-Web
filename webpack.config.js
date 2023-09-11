@@ -15,6 +15,7 @@ module.exports = {
     publication_book: "./src/publication_book.js",
     lab_facilities: "./src/lab_facilities.js",
     gallery: "./src/gallery.js",
+    notice: "./src/notice.js",
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -47,7 +48,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/pages/index.pug",
       filename: "index.html",
-      chunks: ["index"],
+      chunks: ["index", "notice"],
     }),
     // 다른 페이지들의 템플릿을 기반으로 생성된 HTML 파일들
     new HtmlWebpackPlugin({
