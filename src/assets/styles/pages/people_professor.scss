@@ -65,7 +65,8 @@ section.professor-container {
     }
     .professor-description-content {
       ul.professor-description-content-list {
-        padding-left: 5em;
+        padding-left: 10em;
+        line-height: 1.7em;
         @media screen and (max-width: 1280px) {
           padding: 0;
         }
