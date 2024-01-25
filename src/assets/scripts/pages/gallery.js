@@ -18,7 +18,9 @@ const drawGallerys = (gallery) => {
   const imageContainer = document.createElement("div");
   imageContainer.classList.add("gallery__list__image");
   const image = document.createElement("img");
-  image.src = ImageID[0] ? `https://drive.google.com/uc?export=view&id=${ImageID[0]}` : "./images/empty.png";
+  image.src = ImageID[0]
+    ? `https://drive.google.com/thumbnail?id=${ImageID[0]}&sz=w1048`
+    : "./images/empty.png";
   image.alt = Title;
 
   const infoContainer = document.createElement("div");
@@ -58,7 +60,9 @@ const drawGalleryDetail = (gallery) => {
   boardContents.classList.add("board__list__contents");
   ImageID.forEach((imageID, index) => {
     const image = document.createElement("img");
-    image.src = imageID ? `https://drive.google.com/uc?export=view&id=${imageID}` : "./images/empty.png";
+    image.src = imageID
+      ? `https://drive.google.com/thumbnail?id=${imageID}&sz=w1048`
+      : "./images/empty.png";
     image.alt = `${Title} ${index + 1}`;
     boardContents.appendChild(image);
   });
@@ -77,7 +81,9 @@ getExcelData(sheetName, (gallerys) => {
     boardContainer.style.display = "block";
     galleryContainer.style.display = "none";
 
-    const result = gallerys.find((gallery) => gallery.Title.replace(/\s+/g, "-") === galleryId);
+    const result = gallerys.find(
+      (gallery) => gallery.Title.replace(/\s+/g, "-") === galleryId
+    );
     drawGalleryDetail(result);
   }
   // 갤러리 리스트

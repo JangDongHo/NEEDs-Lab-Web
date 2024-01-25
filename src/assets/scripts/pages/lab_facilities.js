@@ -1,7 +1,9 @@
 import { getExcelData } from "../getData";
 
 const drawLabFacilities = (facilities) => {
-  const listContainer = document.querySelector(".lab_facilities__list-container");
+  const listContainer = document.querySelector(
+    ".lab_facilities__list-container"
+  );
 
   facilities.forEach((facility) => {
     const listItem = document.createElement("div");
@@ -11,18 +13,24 @@ const drawLabFacilities = (facilities) => {
     content.classList.add("lab_facilities__list__content");
 
     const imageContainer = document.createElement("div");
-    imageContainer.classList.add("lab_facilities__list__content__image-container");
+    imageContainer.classList.add(
+      "lab_facilities__list__content__image-container"
+    );
 
     const image = document.createElement("img");
     image.classList.add("lab_facilities__list__content__image");
-    const imageUrl = facility.ImageID ? `https://drive.google.com/uc?export=view&id=${facility.ImageID}` : "./images/empty.png";
+    const imageUrl = facility.ImageID
+      ? `https://drive.google.com/thumbnail?id=${facility.ImageID}`
+      : "./images/empty.png";
     image.src = imageUrl;
     image.alt = facility.Name;
 
     imageContainer.appendChild(image);
 
     const textContainer = document.createElement("div");
-    textContainer.classList.add("lab_facilities__list__content__text-container");
+    textContainer.classList.add(
+      "lab_facilities__list__content__text-container"
+    );
 
     const name = document.createElement("div");
     name.classList.add("lab_facilities__list__content__text-container__name");
@@ -30,14 +38,18 @@ const drawLabFacilities = (facilities) => {
     name.textContent = facility.Name;
 
     const infoContainer = document.createElement("div");
-    infoContainer.classList.add("lab_facilities__list__content__text-container__info-container");
+    infoContainer.classList.add(
+      "lab_facilities__list__content__text-container__info-container"
+    );
 
     const model = document.createElement("div");
     model.classList.add("lab_facilities__list__content__text-container__model");
     model.textContent = "모델 : " + facility.Model;
 
     const company = document.createElement("div");
-    company.classList.add("lab_facilities__list__content__text-container__company");
+    company.classList.add(
+      "lab_facilities__list__content__text-container__company"
+    );
     company.textContent = "제조사 : " + facility.Company;
 
     const task = document.createElement("div");

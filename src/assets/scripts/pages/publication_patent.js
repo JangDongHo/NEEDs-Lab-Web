@@ -60,7 +60,9 @@ const drawPublications = (data) => {
     const yearContainer = createPublicationContainer(yearRange);
     publicationContainer.appendChild(yearContainer);
 
-    const listContainer = yearContainer.querySelector(".publication__list-container");
+    const listContainer = yearContainer.querySelector(
+      ".publication__list-container"
+    );
 
     // 아이템별로 리스트 생성
     items.forEach((item) => {
@@ -71,7 +73,9 @@ const drawPublications = (data) => {
 
       const imageElement = document.createElement("img");
       imageElement.classList.add("publication__list-image");
-      const imageUrl = ImageID ? `https://drive.google.com/uc?export=view&id=${ImageID}` : "./images/empty.png";
+      const imageUrl = ImageID
+        ? `https://drive.google.com/thumbnail?id=${ImageID}`
+        : "./images/empty.png";
       imageElement.src = imageUrl;
 
       const content = document.createElement("div");

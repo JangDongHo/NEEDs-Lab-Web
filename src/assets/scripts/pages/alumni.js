@@ -16,7 +16,9 @@ const drawMembers = (members) => {
 
     const image = document.createElement("img");
     image.classList.add("members__list__content__image");
-    const imageUrl = member.ImageID ? `https://drive.google.com/uc?export=view&id=${member.ImageID}` : "./images/empty.png";
+    const imageUrl = member.ImageID
+      ? `https://drive.google.com/thumbnail?id=${member.ImageID}`
+      : "./images/empty.png";
     image.src = imageUrl;
     image.alt = member.Name;
 
@@ -36,7 +38,9 @@ const drawMembers = (members) => {
     name.textContent = member.Name;
 
     const topicContainer = document.createElement("div");
-    topicContainer.classList.add("members__list__content__text-container__topic-container");
+    topicContainer.classList.add(
+      "members__list__content__text-container__topic-container"
+    );
     if (member["Research Subject"] !== "") {
       const researchSubject = document.createElement("p");
       researchSubject.textContent = "Research Subject";
@@ -60,7 +64,9 @@ const drawMembers = (members) => {
     }
 
     const contactContainer = document.createElement("div");
-    contactContainer.classList.add("members__list__content__text-container__contact-container");
+    contactContainer.classList.add(
+      "members__list__content__text-container__contact-container"
+    );
 
     const email = document.createElement("div");
     email.classList.add("members__list__content__text-container__email");
