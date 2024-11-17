@@ -1,4 +1,4 @@
-![Untitled](https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F779e2c30-d00c-41e5-9026-e00f93a5505c%2Fa0741083-4dde-40f9-95cc-cbcb67a667d3%2FUntitled.png?table=block&id=af714db0-f53e-4010-a745-f8e3ba213dce&spaceId=779e2c30-d00c-41e5-9026-e00f93a5505c&width=2000&userId=af62902d-a0be-425a-9ff9-285f15f240a9&cache=v2)
+![](https://oopy.lazyrockets.com/api/v2/notion/image?src=https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F779e2c30-d00c-41e5-9026-e00f93a5505c%2Fa0741083-4dde-40f9-95cc-cbcb67a667d3%2FUntitled.png&blockId=d5e9c4f5-cde0-4779-bb27-dcecb0876fa0)
 
 # **1. 개요**
 
@@ -28,13 +28,13 @@
 
 # 3. 시스템 아키텍처
 
-![Untitled](https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F779e2c30-d00c-41e5-9026-e00f93a5505c%2F600e209f-c098-453c-965e-140cdf093081%2FUntitled.png?table=block&id=613123ae-031a-4979-85f8-5544d80f9a01&spaceId=779e2c30-d00c-41e5-9026-e00f93a5505c&width=2000&userId=af62902d-a0be-425a-9ff9-285f15f240a9&cache=v2)
+![](https://oopy.lazyrockets.com/api/v2/notion/image?src=https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F779e2c30-d00c-41e5-9026-e00f93a5505c%2F600e209f-c098-453c-965e-140cdf093081%2FUntitled.png&blockId=6021f897-e34e-4ffa-b677-d97bc5d5979b)
 
 # 4. 기술적 고민
 
 ## Google Sheets + Google Drive 활용
 
-![스크린샷 2024-06-29 오후 6.34.01.png](https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F779e2c30-d00c-41e5-9026-e00f93a5505c%2Ffca7d15a-cc68-4d45-bc7a-20908b5eefeb%2F%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-06-29_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_6.34.01.png?table=block&id=3bb08919-cb6f-4363-bafd-99a5cd95837f&spaceId=779e2c30-d00c-41e5-9026-e00f93a5505c&width=2000&userId=af62902d-a0be-425a-9ff9-285f15f240a9&cache=v2)
+![](https://oopy.lazyrockets.com/api/v2/notion/image?src=https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F779e2c30-d00c-41e5-9026-e00f93a5505c%2Ffca7d15a-cc68-4d45-bc7a-20908b5eefeb%2F%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-06-29_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_6.34.01.png&blockId=3deea295-445d-4b79-8801-29ba57cec314)
 
  관리자가 홈페이지의 콘텐츠를 쉽게 등록할 수 있도록 어드민 페이지와 데이터베이스를 구성해야 한다. 어드민 페이지를 직접 만드는 대신, Google Sheets를 활용하는 방법을 택했다.
 
