@@ -46,7 +46,7 @@ const drawNotice = (data) => {
 
     const descriptionElement = document.createElement("p");
     descriptionElement.classList.add("news-item__description");
-    descriptionElement.textContent = Content + "..."; // 알림 내용 설정
+    descriptionElement.textContent = Content; // 알림 내용 설정
 
     // 알림 내용 컨테이너에 제목과 내용을 추가합니다.
     contentContainer.appendChild(titleElement);
